@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import Employee from './Employee/Employee';
 
-const App = (props) => {
+const RenderingContentConditionally = (props) => {
 
     const [employeeState, setEmployeeState] = useState({
         employees: [
@@ -39,54 +39,6 @@ const App = (props) => {
         });
     }
 
-    let employees = null;
-    if (toggleEmployeeState) {
-        employees = (
-            <div>
-                <Employee
-                    click={() => switchEmployeeHandler('Gautam Kumar')}
-                    employeeName={employeeState.employees[0].employeeName}
-                    employeeAge={employeeState.employees[0].employeeAge}
-                    employeeId={employeeState.employees[0].employeeId}
-                    employeeDesignation={employeeState.employees[0].employeeDesignation}>
-                    Homecare, Halusuru, Bangalore.
-
-                </Employee>
-
-                <br></br>
-
-                <Employee
-                    changed={nameChangeHandler}
-                    employeeName={employeeState.employees[1].employeeName}
-                    employeeAge={employeeState.employees[1].employeeAge}
-                    employeeId={employeeState.employees[1].employeeId}
-                    employeeDesignation={employeeState.employees[1].employeeDesignation}>
-                    Homecare, Electronic City-1, Bangalore.
-
-                </Employee>
-
-                <br></br>
-
-                <Employee
-                    employeeName={employeeState.employees[2].employeeName}
-                    employeeAge={employeeState.employees[2].employeeAge}
-                    employeeId={employeeState.employees[2].employeeId}
-                    employeeDesignation={employeeState.employees[2].employeeDesignation}>
-                    Homecare, Koramangala, Bangalore.
-
-                </Employee>
-
-                <br></br>
-            </div>
-        );
-    } else {
-        employees = (
-            <div>
-                <h2>Data is not updated....</h2>
-            </div>
-        )
-    }
-
     return (
         <div>
             <div>
@@ -97,11 +49,49 @@ const App = (props) => {
             </div>
             <div>
                 <button type="button" className="btn btn-warning" onClick={() => setToggleEmployeeState(!toggleEmployeeState)}>Toggle Handle</button>
-                {employees}
             </div>
+            {
+                toggleEmployeeState ?
+                    <div>
+                        <Employee
+                            click={() => switchEmployeeHandler('Gautam Kumar')}
+                            employeeName={employeeState.employees[0].employeeName}
+                            employeeAge={employeeState.employees[0].employeeAge}
+                            employeeId={employeeState.employees[0].employeeId}
+                            employeeDesignation={employeeState.employees[0].employeeDesignation}>
+                            Homecare, Halusuru, Bangalore.
+
+                        </Employee>
+
+                        <br></br>
+
+                        <Employee
+                            changed={nameChangeHandler}
+                            employeeName={employeeState.employees[1].employeeName}
+                            employeeAge={employeeState.employees[1].employeeAge}
+                            employeeId={employeeState.employees[1].employeeId}
+                            employeeDesignation={employeeState.employees[1].employeeDesignation}>
+                            Homecare, Electronic City-1, Bangalore.
+
+                        </Employee>
+
+                        <br></br>
+
+                        <Employee
+                            employeeName={employeeState.employees[2].employeeName}
+                            employeeAge={employeeState.employees[2].employeeAge}
+                            employeeId={employeeState.employees[2].employeeId}
+                            employeeDesignation={employeeState.employees[2].employeeDesignation}>
+                            Homecare, Koramangala, Bangalore.
+
+                        </Employee>
+
+                        <br></br>
+                    </div> : <div> <p>Data is not updated....</p> </div>
+            }
 
         </div>
     );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<RenderingContentConditionally />, document.getElementById('root'));

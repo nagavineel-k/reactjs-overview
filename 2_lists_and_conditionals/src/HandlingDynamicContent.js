@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import Employee from './Employee/Employee';
 
-const App = (props) => {
+const HandlingDynamicContent = (props) => {
 
     const [employeeState, setEmployeeState] = useState({
         employees: [
@@ -104,4 +104,4 @@ const App = (props) => {
     );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<HandlingDynamicContent />, document.getElementById('root'));
