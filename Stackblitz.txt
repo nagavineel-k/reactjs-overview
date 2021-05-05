@@ -5,3 +5,10 @@ React Tips (using React Hooks):-
 2. Show and Hide Text = https://stackblitz.com/edit/show-and-hide-text
 3. Toggle using If-Else condtion = https://stackblitz.com/edit/toggle-using-if-else
 4. Dynamic Class Names for CSS = https://stackblitz.com/edit/dynamic-class-names-for-css
+5. onClick and onChange Handling Events = https://stackblitz.com/edit/onclick-and-onchange-handling-events
+6. Change value for specific id or item = https://stackblitz.com/edit/change-value-for-specific-id-or-item
+
+React Tips (using Class Based):-
+--------------------------------------
+
+1. Show and Hide Content = https://stackblitz.com/edit/show-and-hide-in-class-components
