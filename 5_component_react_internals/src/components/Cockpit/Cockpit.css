@@ -1,0 +1,9 @@
+.toggleBtn{
+    background-color: blanchedalmond;
+    color: coral;
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    border-width: 1px;
+    cursor: pointer;
+  }
